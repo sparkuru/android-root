@@ -36,7 +36,7 @@ LineageOS 默认不包含 GApps（Google Apps add-on package），LineageOS 是�
 
 这里需要分为三个步骤：
 
-1. 刷入 LineageOS 的 recovery（刷写的主要的思想在 [readme.md](./readme.md) 里已经讨论过了，即通过 fastboot / recovery 刷入 img 文件）
+1. 刷入 LineageOS 的 recovery（刷写的主要的思想在 [readme](./readme.md) 里已经讨论过了，即通过 fastboot / recovery 刷入 img 文件）
 2. 通过 LineageOS 的 recovery 侧载刷入 LineageOS
 3. （可选）recovery 侧载刷入 GApps
 
@@ -110,7 +110,7 @@ LineageOS 默认不包含 GApps（Google Apps add-on package），LineageOS 是�
 
 到此流程结束，在 recovery HOME 里 `Reboot system now` 重启设备即可
 
-至于后续的通过 magisk 来 root lineageos，和 readme 中提到的流程大致相似，使用上面的 boot.img 即可
+至于后续的通过 magisk 来 root lineageos，和 readme 中提到的流程大致相似，使用上面的 boot.img 即可，特别注意，需要先到 设备 -> 关于本机 -> Build 号 按钮，点击多次以进入开发者模式
 
 ## refer
 

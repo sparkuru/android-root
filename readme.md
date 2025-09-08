@@ -1,5 +1,5 @@
 # android-root
-Android devices root records，
+Android devices root record
 
 1. [root record](./root-record.md)
 2. [mi-rom-flash](./mi-rom-flash.sh)
