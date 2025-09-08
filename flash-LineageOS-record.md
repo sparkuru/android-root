@@ -110,6 +110,8 @@ LineageOS 默认不包含 GApps（Google Apps add-on package），LineageOS 是�
 
 到此流程结束，在 recovery HOME 里 `Reboot system now` 重启设备即可
 
+至于后续的通过 magisk 来 root lineageos，和 readme 中提到的流程大致相似，使用上面的 boot.img 即可
+
 ## refer
 
 1. https://wiki.itsvixano.me/devices/xaga/

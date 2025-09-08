@@ -11,7 +11,7 @@ Android devices root records，
 2.   miui 解锁工具，[链接](https://www.miui.com/unlock/index.html)
 3.   miui rom 下载，[xiaomirom](https://xiaomirom.com/series/)
 4.   magisk 下载，[topjohnwu/Magisk](https://github.com/topjohnwu/Magisk)
-5.   magisk-delta 下载，[HuskyDG/magisk-files](https://github.com/HuskyDG/magisk-files/releases)
+5.   ~~magisk-delta 下载，[HuskyDG/magisk-files](https://github.com/HuskyDG/magisk-files/releases)~~
 
 ## magisk-supports
 
@@ -30,10 +30,10 @@ Android devices root records，
      8.   Disable Flag Secure，[LSPosed/DisableFlagSecure](https://github.com/LSPosed/DisableFlagSecure.git)，解除安卓安全限制（可以强制截屏）
      9.   Fuck Shake，[pwh-pwh/fuck_shake](https://github.com/pwh-pwh/fuck_shake.git)，屏蔽摇一摇广告
      10.   TwiFucker，[Dr-TSNG/TwiFucker](https://github.com/Dr-TSNG/TwiFucker.git)，软件优化
-     11.   Hide My Applist，[Dr-TSNG/Hide-My-Applist](https://github.com/Dr-TSNG/Hide-My-Applist.git)，某些应用的行为不是很干净，喜欢侵犯隐私
+     11.   Hide My Applist，[Dr-TSNG/Hide-My-Applist](https://github.com/Dr-TSNG/Hide-My-Applist.git)，应用喜欢侵犯隐私
      12.   PlayIntegrityFix，[chiteroman/PlayIntegrityFix](https://github.com/chiteroman/PlayIntegrityFix.git)，谷歌 play 完整性校验 1 绕过
      13.   safetynet-filx，[kdrag0n/safetynet-fix](https://github.com/kdrag0n/safetynet-fix.git)，谷歌 play 完整性校验 2 绕过
-     14.   Thanox，[Tornaco/Thanox](https://github.com/Tornaco/Thanox)，十分好用的安卓权限、隐私配置软件，需要付费（`20RMB / 设备 / 永久` 或 `6.5$ / 不限设备 / 永久`）
+     14.   Thanox，[Tornaco/Thanox](https://github.com/Tornaco/Thanox)，十分好用的安卓权限、隐私配置软件，需要付费（`20RMB / 设备 / 永久` 或 `$5 / 不限设备 / 永久`）
 6.   其他可选 magisk 模块，[参考](https://magisk.suchenqaq.club/query.php?file_type=magisk&is_classification_list=true)
 
      1.   [自动神仙救砖-支持OTA稳定Lite白名单版v3](https://downloads1.suchenqaq.club/magisk_module/system_optimization/%E8%87%AA%E5%8A%A8%E7%A5%9E%E4%BB%99%E6%95%91%E7%A0%96-%E6%94%AF%E6%8C%81OTA%E7%A8%B3%E5%AE%9ALite%E7%99%BD%E5%90%8D%E5%8D%95%E7%89%88v3v35.zip)
