@@ -13,7 +13,7 @@
 - **不支持** 自定义内核，**请勿** 刷入
 - **只能** 使用 Lineage Recovery（LineageOS 恢复模式）来刷入 LineageOS（安装指南会告诉您如何刷入）
 
-[下载](https://github.com/ItsVixano-releases/LineageOS_xaga.git) 对应版本的 lineageos rom，我的是 redmi note 11tpro ，其对应的是 xage，则获取：
+[下载](https://github.com/ItsVixano-releases/LineageOS_xaga.git) 对应版本的 lineageos rom，我的是 redmi note 11tpro ，其对应的是 xaga，则获取：
 
 - `lineage-22.2-xxxxxxxx-UNOFFICIAL-xaga.zip`
 - `boot.img`
@@ -46,24 +46,24 @@ LineageOS 默认不包含 GApps（Google Apps add-on package），LineageOS 是�
 
 2. 刷入三个分区
 
-	```bash
-	$ fastboot flash boot boot.img
-	Sending 'boot_a' (65536 KB)                        OKAY [  1.944s]
-	Writing 'boot_a'                                   OKAY [  0.116s]
-	Finished. Total time: 2.067s
-	                                                                                                                            
-	$ fastboot flash vendor_boot vendor_boot.img
-	Sending 'vendor_boot_a' (65536 KB)                 OKAY [  1.867s]
-	Writing 'vendor_boot_a'                            OKAY [  0.118s]
-	Finished. Total time: 1.989s
-	                                                                                                                      
-	$ fastboot flash dtbo dtbo.img
-	Sending 'dtbo_a' (84 KB)                           OKAY [  0.005s]
-	Writing 'dtbo_a'                                   OKAY [  0.002s]
-	Finished. Total time: 0.015s
-	```
+  ```bash
+  $ fastboot flash boot boot.img
+  Sending 'boot_a' (65536 KB)                        OKAY [  1.944s]
+  Writing 'boot_a'                                   OKAY [  0.116s]
+  Finished. Total time: 2.067s
+                                                                                                                              
+  $ fastboot flash vendor_boot vendor_boot.img
+  Sending 'vendor_boot_a' (65536 KB)                 OKAY [  1.867s]
+  Writing 'vendor_boot_a'                            OKAY [  0.118s]
+  Finished. Total time: 1.989s
+                                                                                                                        
+  $ fastboot flash dtbo dtbo.img
+  Sending 'dtbo_a' (84 KB)                           OKAY [  0.005s]
+  Writing 'dtbo_a'                                   OKAY [  0.002s]
+  Finished. Total time: 0.015s
+  ```
 
-3. 通过 fastboot 工具重启设备，进入到 recovery 模式：`fastboot reboot recovery`
+  通过 fastboot 工具重启设备，进入到 recovery 模式：`fastboot reboot recovery`
 
 4. 在 recovery 模式里
 
