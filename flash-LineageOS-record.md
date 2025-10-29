@@ -18,7 +18,7 @@
 - `lineage-22.2-xxxxxxxx-UNOFFICIAL-xaga.zip`
 - `boot.img`
 - `vendor_boot.img`
-- `dtbo.im`
+- `dtbo.img`
 
 先到 [官方页面](https://wiki.lineageos.org/devices/) 看看有没有自己设备的支持，如果没有就自己多找找设备对应的代号，然后用 `lineage_xxx` 一般可以很好找到
 
