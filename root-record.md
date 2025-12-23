@@ -155,9 +155,9 @@
 2.   仅提取 boot.img 文件：`.\payload-dumper-go.exe -p boot -o .\img .\payload.bin`
 3.   仅提取 init_boot.img 文件：`.\payload-dumper-go.exe -p init_boot -o .\img .\payload.bin`
 
-### extract boot by hand
+### extract boot manually
 
-由于一加系列的手机对于解锁十分开放（仅在 fastboot 下输入 `fastboot flashing unlock` 即可解锁），笔者弄了一台来体验，这里以一加 ace 3 定制机为例，因为手机目前（20240307）还未放出官方 rom 的资源，而本机使用的出厂系统是 `PJE110_14.0.0.320(CN01)`，而目前市面上还未流出该版本的 rom 包（20240315 更新：已经向设备推送了 502 新系统的更新，但是据社区反应，续航有所下将，秉持着出厂系统就是最好的系统的原则，还是先把本系统完整提取后以备不时之需，顺便进行 root），没法从中提取出 boot.img 用于 magisk 修补，故采用以下方式进行 boot 的提取
+由于一加系列的手机对于解锁十分开放（仅在 fastboot 下输入 `fastboot flashing unlock` 即可解锁；20251223 更新：目前出厂预装 ColorOS 16 的设备需要申请测试，无法再在不需要官方许可的前提下解锁），笔者弄了一台来体验，这里以一加 ace 3 定制机为例，因为手机目前（20240307）还未放出官方 rom 的资源，而本机使用的出厂系统是 `PJE110_14.0.0.320(CN01)`，而目前市面上还未流出该版本的 rom 包（20240315 更新：已经向设备推送了 502 新系统的更新，但是据社区反应，续航有所下将，秉持着出厂系统就是最好的系统的原则，还是先把本系统完整提取后以备不时之需，顺便进行 root），没法从中提取出 boot.img 用于 magisk 修补，故采用以下方式进行 boot 的提取
 
 -   （失败）没法直接提取其中的 boot.img，尝试直接在手机内提取 boot
     1.   电脑连接手机，打开 usb 调试，使用 `adb shell` 进入手机系统
@@ -168,12 +168,38 @@
     1.   需要有专门适配的 twrp，这里有幸找到了第三方制作的 [twrp for oneplus ace 3](https://t.me/colorospro/215)，下载完成后解压，拿到 `TWRP-14-Aston-Color597-V1.2.img` 文件
     2.   **注意：刷入非官方的恢复模式引导镜像（将无法恢复），以及进行 root 都将导致系统无法正常接收官方系统更新**；
     3.   手机连接电脑后，使用 `.\adb.exe reboot bootloader` 进入 fastboot 模式，输入：`.\fastboot.exe flash recovery ./TWRP-14-Aston-Color597-V1.2.img` 将 twrp 刷入 recovery 模式**（必须使用官方原厂数据线才能识别到 fastboot 模式）**
-    4.   在 fastboot 模式下，按音量下键切换到 recovery 模式，按 power 键确认进入 twrp（如果手机有解锁密码就输入解锁密码）；然后 "**备份 - 选择 boot 和 init boot - 存储位置选择内置存储 - 滑动滑块确认备份**"，回到主界面点击重启到系统
-    5.   使用电脑从手机存储中以下位置：`TWRP\BACKUPS\serialno\xxx-xxx-xxx` 找到 `boot.emmc.win` 和 `init_boot.emmc.win` 文件传输到电脑上存档备份，看到后缀不是 img，不必担心，这是用于恢复的，如果后续出现开不了机，进 twrp 将这两个文件恢复即可**（如果不确定手机会不会变砖，且可能会要用到 twrp 来恢复，则在刷机前需要先将手机的解锁密码关闭）**
+    4.   在 fastboot 模式下，按音量下键切换到 recovery 模式，按 power 键确认进入 twrp（如果手机有解锁密码就输入解锁密码，当然也建议在刷机前关闭解锁密码）；然后 "**备份 - 选择 boot 和 init boot - 存储位置选择内置存储 - 滑动滑块确认备份**"，回到主界面点击重启到系统；如果在使用 twrp 过程中遇到问题（例如无法滑动、点击等），可以在电脑上通过 `adb reboot recovery` 来重新进入 recovery 模式
+    5.   使用电脑从手机存储中以下位置：`TWRP\BACKUPS\serialno\xxx-xxx-xxx` （一般位于 `\storage\emulated\` 下, 如果在手机系统中找不到，则通过 `adb pull /storage/emulated/0/TWRP/BACKUPS/serialno/xxx-xxx-xxx` 来下载） 找到 `boot.emmc.win` 和 `init_boot.emmc.win` 文件传输到电脑上存档备份，看到后缀不是 img，不必担心，这是用于恢复的，如果后续出现开不了机，进 twrp 将这两个文件恢复即可**（如果不确定手机会不会变砖，且可能会要用到 twrp 来恢复，则在刷机前需要先将手机的解锁密码关闭）**
     6.   继续进入 recovery 模式（保持电脑连接手机），此时在 `adb.exe shell` 可以发现成功进入了命令行，而且是 root 权限，此时可以手动提取 boot 和 init boot 了
          1.   按照上文 dd 提取流程，进入 boot 目录：`cd /dev/block/by-name`，找到 boot_a 指向文件，将其提取保存：`dd if=/dev/block/sde13 of=/sdcard/Download/boot_a.img`；
          2.   顺便还要保存一份 init_boot_a 文件，这个才是后续要刷入的真正的 boot 文件：`ls -l init_boot_a` 返回 *lrwxrwxrwx 1 root root 16 1970-01-14 22:32 init_boot_a -> /dev/block/sde32*；将其提取出来：`dd if=/dev/block/sde32 of=/sdcard/Download/init_boot_a.img`
          3.   提取完成后重启之，两个文件放在了手机目录：`Download` 下，备份之，之后使用 magisk 修补和 root 的流程就如前文所述；**特别需要注意的是**，在修补和刷入 boot 时，选择的文件是 `init_boot.img`（8 MB 大小） 而不再是 `boot.img`，指令如下：`.\fastboot.exe flash init_boot magisk_patched-26400_xxxxx.img`，如果出问题了，就找到刚才备份的 `init_boot.img`，刷回 init_boot 分区
+
+### backup
+
+刷机 / root 前建议备份的关键分区：
+
+| 分区                            | 作用                    | 重要性        |
+| ------------------------------- | ----------------------- | ------------- |
+| boot_a/b                        | 内核、ramdisk           | root 必需等   |
+| dtbo_a/b                        | 设备树覆盖d             | 启动相关需    |
+| vbmeta_a/b                      | 验证启动签名            | 禁用 AVB 用设 |
+| persist                         | 传感器校准、WLAN/BT MAC | 丢了很麻烦    |
+| devinfo                         | 解锁状态等设备信息      |               |
+| modem_a/b                       | 基带/信号               |               |
+| bluetooth                       | 蓝牙固件                |               |
+| efs / fsg / modemst1 / modemst2 | IMEI、基带配置o         |               |
+| fsc                             | 基带相关                |               |
+
+在 twrp 下（或 root 下）可以通过以下方式备份：
+
+```bash
+
+$ adb shell mkdir -p /tmp/backup; for part in boot_a boot_b init_boot_a init_boot_b dtbo_a dtbo_b vbmeta_a vbmeta_b persist modemst1 modemst2 fsg fsc devinfo; do
+	adb shell dd if=/dev/block/by-name/$part of=/tmp/backup/${part}.img bs=4M
+done; adb pull /tmp/backup/ .; adb shell rm -rf /tmp/backup
+```
+
 
 ### build twrp
 
