@@ -200,6 +200,13 @@ $ adb shell mkdir -p /tmp/backup; for part in boot_a boot_b init_boot_a init_boo
 done; adb pull /tmp/backup/ .; adb shell rm -rf /tmp/backup
 ```
 
+### restore official recovery
+
+通过下载官方更新包，提取其中的 recovery.img 文件，然后通过 fastboot 刷入
+
+1. 下载官方更新包，解压出来有一个 `payload.bin` 文件
+2. 提取其中的 recovery.img 文件，需要用到 [payload-dumper-go](https://github.com/ssut/payload-dumper-go/releases) 工具：`.\payload-dumper-go.exe -p recovery -o .\img .\payload.bin`
+3. 通过 fastboot 刷入：`.\fastboot.exe flash recovery .\recovery.img`
 
 ### build twrp
 
