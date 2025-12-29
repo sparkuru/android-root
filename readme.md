@@ -1,6 +1,6 @@
 # android-root
 
-Android devices root record
+android device root record
 
 1. [root record](./root-record.md)
 2. [mi-rom-flash](./mi-rom-flash.sh)
@@ -36,24 +36,55 @@ Android devices root record
      13.   safetynet-filx，[kdrag0n/safetynet-fix](https://github.com/kdrag0n/safetynet-fix.git)，谷歌 play 完整性校验 2 绕过
      14.   Thanox，[Tornaco/Thanox](https://github.com/Tornaco/Thanox)，十分好用的安卓权限、隐私配置软件，需要付费（`20RMB / 设备 / 永久` 或 `$5 / 不限设备 / 永久`）
      15.   LuckyTool，[Xposed-Modules-Repo/com.luckyzyx.luckytool](https://github.com/Xposed-Modules-Repo/com.luckyzyx.luckytool.git)，ColorOS 相关优化
+     16.   FingerprintPay-all，[eritpchy/FingerprintPay](https://github.com/eritpchy/FingerprintPay.git)，模拟实现指纹支付功能
 6.   其他可选 magisk 模块，[参考](https://magisk.suchenqaq.club/query.php?file_type=magisk&is_classification_list=true)
-
      1.   自动神仙救砖-支持OTA稳定Lite白名单版v3
      2.   去广告
      3.   音量键救砖
 
 ```bash
-$ ls *.zip *.apk
-A-Automatic_brick_rescue.zip                                B-gkd-v1.11.6.apk
-A-LSPosed-v1.9.2-7024-zygisk-release.zip                    B-HMA-V3.5.apk
-A-safetynet-fix-v2.4.0.zip                                  B-LuckyTool_v1.3.2.20457.apk
-A-Shamiko-v1.2.5-414-release.zip                            B-Re-Telegram-v18.0-Release.apk
-A-zygisk-module-xfingerprint-pay-wechat-v6.0.2-release.zip  B-TwiFucker-V2.1.apk
-B-ApplistDetector.V2.4.apk                                  B-Zhiliao_24.04.06.apk
-B-BiliRoaming_1.7.0.apk                                     R-cx-file-explorer.apk
-B-disableflagsecure.apk                                     R-Magisk-v30.6.apk
-B-FuckCainiao_release_v0.1.1.apk                            R-MRepo-2.5.0.a27eaf7-921-release.apk
-B-fuck-shake.apk                                            R-shizuku-v13.6.0.r1086.2650830c-release.apk
+$ tree -L2
+.
+├── apk
+│   ├── baidunetdisk-精简版-12.1.3.apk
+│   ├── bilibili-国际版.apk
+│   ├── cmfa-universal.apk
+│   ├── GooglePlayStore-49.3.28.apk
+│   ├── iwansetting.apk
+│   ├── mxplayer-pro.apk
+│   ├── pdf-viewer-4.4.3.apk
+│   ├── pinduoduo-2019-4.83.0.apk
+│   ├── pixiv-6.129.0.apk
+│   ├── qq-9.1.70.25645.apk
+│   ├── telegram-11.3.3.apk
+│   ├── tieba-lite-4.0.0.apk
+│   ├── Via_导出数据_20251223.zip
+│   ├── via.apk
+│   ├── wechat-8.0.60.apk
+│   ├── weibo-intl-6.3.5.apk
+│   └── xplayer-2.3.2.1.apk
+└── root
+    ├── A-Automatic_brick_rescue.zip
+    ├── A-LSPosed-v1.9.2-7024-zygisk-release.zip
+    ├── A-safetynet-fix-v2.4.0.zip
+    ├── A-Shamiko-v1.2.5-414-release.zip
+    ├── A-zygisk-module-xfingerprint-pay-all-v6.0.2-release.zip
+    ├── B-一加全能盒子10.2.apk
+    ├── B-ApplistDetector.V2.4.apk
+    ├── B-BiliRoaming_1.7.0.apk
+    ├── B-disableflagsecure.apk
+    ├── B-FuckCainiao_release_v0.2.0.apk
+    ├── B-gkd-v1.11.6.apk
+    ├── B-HMA-V3.5.apk
+    ├── B-LuckyTool_v1.3.2.20457.apk
+    ├── B-momo-v4.4.1.apk
+    ├── B-Re-Telegram-v18.0-Release.apk
+    ├── B-TwiFucker-V2.1.apk
+    ├── B-Zhiliao_24.04.06.apk
+    ├── R-cx-file-explorer.apk
+    ├── R-Magisk-v30.6.apk
+    ├── R-MRepo-2.5.0.a27eaf7-921-release.apk
+    └── R-shizuku-v13.6.0.r1086.2650830c-release.apk
 ```
 
 ## reference
