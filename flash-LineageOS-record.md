@@ -1,4 +1,4 @@
-小米手机，开启 USB 调试（安全设置）需要联网并登陆小米账号，个人不能接受，解决方式可以参考 [不登陆小米账号启用 MIUI 的 ADB 调试（安全设置）和 ADB 应用安装（需 Root）](https://zhuanlan.zhihu.com/p/603628922)
+小米手机，开启 USB 调试（安全设置）需要联网并登陆小米账号，解决方式可以参考 [不登陆小米账号启用 MIUI 的 ADB 调试（安全设置）和 ADB 应用安装（需 Root）](https://zhuanlan.zhihu.com/p/603628922)
 
 **我这边打算直接给 redmi note 11tpro plus 刷 [LineageOS](https://zh.wikipedia.org/zh-sg/LineageOS)**
 
