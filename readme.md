@@ -23,11 +23,9 @@ android device root record
 | Shamiko | [Shamiko releases](https://github.com/LSPosed/LSPosed.github.io/releases) | 提供更好的 root 授权服务 |
 | Zygisk - LSPosed | [LSPosed/LSPosed](https://github.com/LSPosed/LSPosed.git) | ART hooking framework；下面大多数模块都要基于这个框架（或者类似物）实现，适配 libxposed 100 之前版本；意味着更新的模块无法使用，推荐用 Vector |
 | Vector | [JingMatrix/Vector](https://github.com/JingMatrix/Vector.git) | 推荐使用，适配 libxposed 100 以前及之后的版本，LSPosed 是其 upstream |
-|  |  |  |
-| PlayIntegrityFix | [KOWX712/PlayIntegrityFix](https://github.com/KOWX712/PlayIntegrityFix.git) | （旧版 android，已失效）谷歌 Play 完整性校验绕过（方案 1）；另推荐检查工具 [spic](simple play integrity checker) |
+| PlayIntegrityFix | [KOWX712/PlayIntegrityFix](https://github.com/KOWX712/PlayIntegrityFix.git) | （旧版 android，已失效）谷歌 Play 完整性校验绕过（方案 1）；另推荐检查工具 simple play integrity checker（spic） |
 | safetynet-fix | [kdrag0n/safetynet-fix](https://github.com/kdrag0n/safetynet-fix.git) | （旧版 android，已失效）谷歌 Play 完整性校验绕过（方案 2） |
 | Play Integrity Fix [INJECT] | [KOWX712/PlayIntegrityFix](https://github.com/KOWX712/PlayIntegrityFix.git) | 谷歌 Play 完整性校验绕过（方案 3） |
-|  |  |  |
 | KTweak | [tytydraco/KTweak-Android-App](https://github.com/tytydraco/KTweak-Android-App.git) | 优化手机省电 |
 | FingerprintPay | [eritpchy/FingerprintPay](https://github.com/eritpchy/FingerprintPay.git) | 模拟实现指纹支付功能：微信、QQ、支付宝、淘宝、云闪付 |
 | 爱玩机工具箱 | [release](https://aiwanji.xiake.pro/) | 提供更好地系统信息查看、配置修改、应用安装管理器；免费版足够用 |
